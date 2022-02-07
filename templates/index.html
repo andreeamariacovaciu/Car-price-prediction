@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Car Price Prediction</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Car Price</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="on road old" placeholder="On road old" required="required" />
+        <input type="text" name="on road now" placeholder="On road now" required="required" />
+		<input type="text" name="years" placeholder="Years" required="required" />
+		<input type="text" name="km" placeholder="Km" required="required" />
+		<input type="text" name="rating" placeholder="Rating" required="required" />
+		<input type="text" name="condition" placeholder="Condition" required="required" />
+		<input type="text" name="economy" placeholder="Economy" required="required" />
+		<input type="text" name="top speed" placeholder="Top speed" required="required" />
+		<input type="text" name="hp" placeholder="HP" required="required" />
+		<input type="text" name="torque" placeholder="Torque" required="required" />
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Car Price</button>
+    </form>
+
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
